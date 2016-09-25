@@ -234,11 +234,18 @@ void playGame() {
     playGame();
   }
 
+  srand(get_clock_time());
   make_base();
   const int bunkerX = draw_bunker();
   const int wallX = (bunkerX / 2) + 20;
 
   executeGame(tries, bunkerX, wallX);
+  
+  print("\n\nPlay again? ");
+  const string response = read_string();
+  if (response == "Yes" || response == "yes"  || response == "Y" || response == "y") {
+    playGame();
+  }
 }
 
 void main() {
