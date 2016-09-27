@@ -244,6 +244,10 @@ void playGame() {
   print("\n\nPlay again? ");
   const string response = read_string();
   if (response == "Yes" || response == "yes"  || response == "Y" || response == "y") {
+    clear()
+    draw_floor();
+    make_console_active();
+    
     playGame();
   }
 }
